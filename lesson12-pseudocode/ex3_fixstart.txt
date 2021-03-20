@@ -2,3 +2,16 @@ FixStart
 Create a function called fixStart. It should take a single argument, a string, and return a version where all occurrences of its first character have been replaced with *****, except for the first character itself. You can assume that the string is at least one character long. For example:
 fixStart('babble'): ‘ba**le’
 fixStart('turtle'): ‘tur*le’
+
+CREATE function fixStart(word)
+    var firstChar = word[0]
+    var newWord = word[0]
+    FOR EACH character in word after the first
+        IF char = firstChar
+            newWord += "*"
+        ELSE
+            newWord += char
+
+    RETURN newWord
+
+
