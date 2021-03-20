@@ -1,0 +1,39 @@
+Recipe List exercise
+
+// Requirements
+- Create an object to hold information on your favourite recipes. It should have properties for:
+    - recipeTitle (a string)
+    - servings (a number)
+    - ingredients (an array of strings)
+    - directions (a string)
+- List all recipes
+- Create a loop to list all the ingredients.
+
+
+
+// Create the recipes object and populate it with recipes
+CREATE allRecipesObject
+    FOR each recipe
+        CREATE recipeObject
+            recipeObject.recipeTitle = name of the recipe (string)
+            recipeObject.servings = number of servings (number)
+            recipeObject.ingredientsArray = empty array
+            FOR each ingredient
+                APPEND ingredient (string) to ingredientsArray
+            END FOR loop
+            recipeObject.directions = directions (string)
+        allRecipesObject.recipeObject[Name] = recipeObject
+    END FOR loop
+
+// List all recipes
+FOR each recipeObject in allRecipesObject
+    PRINT recipeObject.name
+END FOR loop
+
+// Create a loop to list all the ingredients.
+FOR each recipeObject in allRecipesObject
+    FOR ingredient in recipeObject.ingredientsArray
+        PRINT ingredient
+    END FOR loop
+END FOR loop
+
