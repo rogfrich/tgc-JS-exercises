@@ -1,0 +1,30 @@
+Pseudocode to calculate mode values for an array
+Should return an array of numbers which occur the most in the sample
+[1, 2, 3, 2] would return [2]
+[1, 1, 2, 2, 3] would return [1, 2]
+
+function mode(numbers)
+
+    take an array numbers
+
+    create an object numberCounts
+    for each number in numbers
+        if number exists in numberCounts keys
+            increment numberCounts.<key> by 1
+        else    
+            create numbercount.<key> and set its value to 1
+
+
+    for each item in numberCounts
+        push [key, count] to sortableArray
+
+    sort sortableArray on the second element in each constituent array
+    mode = item[0] for the first item in the sorted array
+    results = [mode]
+    for each item in sortableArray after the first:
+        if item[1] == mode
+            push item[0] to results
+        else
+            break out of the loop
+    
+    return results
